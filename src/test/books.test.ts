@@ -1,5 +1,5 @@
 import {describe,it,expect} from 'vitest';
-import {parseBooks,selectBooks} from './books';
+import {parseBooks,selectBooks} from '../books';
 describe('book rules',()=>{
  it('groups the 17/18 boundary and sorts across owners without dropping duplicates',()=>{
  const data=parseBooks([{age:18,books:[{name:'zebra',type:'Ebook'},{name:'Apple',type:'Hardcover'}]},{age:35,books:[{name:'apple',type:'Paperback'}]},{age:17,BOOKS:[{NAME:'Child',type:' Hardcover '}]}]);

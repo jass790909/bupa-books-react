@@ -1,8 +1,8 @@
 import {it,expect,vi} from 'vitest';
 import {render,screen,waitFor} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import App from './App';
-import * as api from './books';
+import App from '../App';
+import * as api from '../books';
 it('loads on demand, filters without refetching, preserves prior results on failure and retries',async()=>{
  const user=userEvent.setup();const fetch=vi.spyOn(api,'fetchBooks').mockResolvedValue(api.parseBooks([{age:18,books:[{name:'Adult story',type:'Paperback'}]},{age:17,books:[{name:'Child story',type:'Hardcover'}]}]));
  render(<App/>);expect(fetch).not.toHaveBeenCalled();
